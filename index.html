@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>भारतीय राजव्यवस्था (Polity) — 804 PYQ Exam Studio</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+
+  <!-- ====================================================================
+       SCREEN 1: CHAPTER SELECTION & TEST STUDIO (2-COLUMN ARCHITECTURE)
+       ==================================================================== -->
+  <section id="view-chapter-selection" class="view-screen active">
+    <!-- Clean Compact Top Navbar -->
+    <header class="studio-navbar">
+      <div class="studio-brand">
+        <div class="studio-brand-icon">🇮🇳</div>
+        <div class="studio-brand-info">
+          <h1 class="studio-brand-title">भारतीय राजव्यवस्था (Polity)</h1>
+          <p class="studio-brand-subtitle">804 प्रामाणिक पूर्व-परीक्षा प्रश्न बैंक • UPSC / PCS / SSC</p>
+        </div>
+      </div>
+
+      <div class="studio-nav-right">
+        <span class="badge-tag-bank" id="metaTotalBankBadge">18 अध्याय • 804 प्रश्न</span>
+        <button type="button" id="themeToggleBtn" class="btn-theme-switch" title="थीम बदलें">
+          🌓 <span id="themeToggleText">लाइट मोड</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- 3-Step Ergonomic Workflow Guidance Timeline -->
+    <nav class="studio-workflow-strip" aria-label="परीक्षा प्रक्रिया चरण">
+      <div class="workflow-stepper-container">
+        <div class="workflow-step-item active" id="stepIndicator1">
+          <div class="step-badge-circle">1</div>
+          <div class="step-text-col">
+            <span class="step-primary-text">अध्याय चयन (Chapters)</span>
+            <span class="step-sub-text" id="step1SubText">कम से कम 1 अध्याय चुनें</span>
+          </div>
+        </div>
+        <div class="workflow-step-connector" id="stepConn1"></div>
+        <div class="workflow-step-item" id="stepIndicator2">
+          <div class="step-badge-circle">2</div>
+          <div class="step-text-col">
+            <span class="step-primary-text">टेस्ट सेटिंग्स (Settings)</span>
+            <span class="step-sub-text">प्रश्नों की संख्या, समय व नेगेटिव मार्किंग</span>
+          </div>
+        </div>
+        <div class="workflow-step-connector" id="stepConn2"></div>
+        <div class="workflow-step-item" id="stepIndicator3">
+          <div class="step-badge-circle">3</div>
+          <div class="step-text-col">
+            <span class="step-primary-text">क्विज़ प्रारंभ (Launch)</span>
+            <span class="step-sub-text">सफल्ड 100vh CBT इंजन</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Two-Column Layout -->
+    <main class="studio-main-container">
+      <!-- Left Column: Chapter Catalog & Search -->
+      <section class="catalog-column">
+        <!-- Toolbar Card -->
+        <div class="catalog-toolbar-card">
+          <!-- Primary Row: Search & Presets -->
+          <div class="toolbar-primary-row">
+            <div class="search-field-wrapper">
+              <svg class="search-field-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="chapterSearchInput" placeholder="अध्याय खोजें... (उदा. मौलिक अधिकार, संसद, राष्ट्रपति, न्यायपालिका)" autocomplete="off">
+              <button type="button" class="btn-search-clear" id="btnClearSearch" title="खोज साफ़ करें">✕</button>
+            </div>
+
+            <div class="quick-select-actions">
+              <button type="button" class="btn-catalog-action primary-preset" id="selectAllChaptersBtn" title="सभी 18 अध्यायों का चयन करें">
+                <span class="action-icon">✓</span>
+                <span>संपूर्ण पाठ्यक्रम (18)</span>
+              </button>
+              <button type="button" class="btn-catalog-action" id="selectCorePolityBtn" title="UPSC/PCS के सर्वाधिक महत्वपूर्ण 5 अध्याय">
+                <span class="action-icon">⭐</span>
+                <span>कोर पॉलिटी (Top 5)</span>
+              </button>
+              <button type="button" class="btn-catalog-action danger-preset" id="deselectAllChaptersBtn" title="सभी चयनित अध्यायों को हटाएं">
+                <span class="action-icon">✕</span>
+                <span>चयन रीसेट</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Filter Row: Category Tabs with Item Counts -->
+          <div class="toolbar-filter-row">
+            <span class="filter-row-label">विषय अनुभाग:</span>
+            <nav class="category-filter-nav" aria-label="विषय अनुभाग">
+              <button type="button" class="cat-tab-btn active" data-cat="all">
+                <span>सभी अध्याय</span>
+                <span class="cat-count-pill">18</span>
+              </button>
+              <button type="button" class="cat-tab-btn" data-cat="constitution">
+                <span>संविधान व अधिकार</span>
+                <span class="cat-count-pill">Ch 1-7</span>
+              </button>
+              <button type="button" class="cat-tab-btn" data-cat="executive">
+                <span>संघ व कार्यपालिका</span>
+                <span class="cat-count-pill">Ch 8-10</span>
+              </button>
+              <button type="button" class="cat-tab-btn" data-cat="judiciary">
+                <span>राज्य व न्यायपालिका</span>
+                <span class="cat-count-pill">Ch 11-13</span>
+              </button>
+              <button type="button" class="cat-tab-btn" data-cat="local">
+                <span>स्थानीय निकाय व आयोग</span>
+                <span class="cat-count-pill">Ch 14-18</span>
+              </button>
+            </nav>
+          </div>
+        </div>
+
+        <!-- 3-Column Responsive Chapter Cards Grid -->
+        <div class="chapters-card-grid" id="chaptersGrid">
+          <!-- Dynamically populated chapter cards -->
+        </div>
+      </section>
+
+      <!-- Right Column: Sticky Test Setup & Launch Studio -->
+      <aside class="studio-setup-sidebar" aria-label="टेस्ट सेटिंग्स व लॉन्च">
+        <div class="setup-panel-header">
+          <div class="setup-header-left">
+            <span class="setup-icon-box">⚙️</span>
+            <div>
+              <h3>परीक्षा सेटिंग्स</h3>
+              <p class="setup-subtitle">Live Exam Studio</p>
+            </div>
+          </div>
+          <span class="setup-live-pill" id="setupStatusPill">तैयारी मोड</span>
+        </div>
+
+        <!-- Enhanced Executive Metric Card -->
+        <div class="setup-metric-card">
+          <div class="metric-stats-row">
+            <div class="metric-stat-box">
+              <span class="metric-label">चयनित अध्याय</span>
+              <div class="metric-value-row">
+                <span class="metric-primary-val" id="selectedChaptersBadge">0</span>
+                <span class="metric-total-val">/ 18</span>
+              </div>
+            </div>
+            <div class="metric-divider-line"></div>
+            <div class="metric-stat-box text-right">
+              <span class="metric-label">उपलब्ध प्रश्न</span>
+              <div class="metric-value-row justify-end">
+                <span class="metric-primary-val" id="selectedQuestionsBadge">0</span>
+                <span class="metric-total-val">PYQs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress bar with syllabus coverage -->
+          <div class="selection-progress-wrapper">
+            <div class="progress-label-row">
+              <span>पाठ्यक्रम कवरेज</span>
+              <span id="coveragePercentText">0%</span>
+            </div>
+            <div class="selection-progress-container" title="अध्याय चयन प्रगति">
+              <div class="selection-progress-bar" id="selectionProgressBar" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <!-- Live Exam Forecast Capsule (Time + Marks) -->
+          <div class="exam-forecast-strip" id="examForecastStrip">
+            <div class="forecast-item">
+              <span class="forecast-icon">⏱</span>
+              <span class="forecast-text" id="forecastTime">समय: --</span>
+            </div>
+            <div class="forecast-bullet">•</div>
+            <div class="forecast-item">
+              <span class="forecast-icon">🎯</span>
+              <span class="forecast-text" id="forecastMarks">अधिकतम: -- अंक</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="selection-helper-note" id="selectionHelperNote">👈 बाईं ओर दिए गए अध्यायों पर क्लिक करके चुनें</p>
+
+        <!-- Setting 1: Question Count (Segmented Pills) -->
+        <div class="config-group">
+          <div class="config-title-row">
+            <span class="config-group-title">प्रश्नों की संख्या</span>
+            <span class="config-hint-pill" id="effectiveLimitHint">सभी प्रश्न</span>
+          </div>
+          <div class="segmented-pill-row" id="segQuestionLimit">
+            <button type="button" class="btn-seg-option" data-val="25">25 Qs</button>
+            <button type="button" class="btn-seg-option" data-val="50">50 Qs</button>
+            <button type="button" class="btn-seg-option" data-val="100">100 Qs</button>
+            <button type="button" class="btn-seg-option active" data-val="all">सभी (All)</button>
+          </div>
+        </div>
+
+        <!-- Setting 2: Timer Mode (Segmented Pills) -->
+        <div class="config-group">
+          <span class="config-group-title">समय सीमा व परीक्षा मोड</span>
+          <div class="segmented-pill-row" id="segTimerMode">
+            <button type="button" class="btn-seg-option active" data-val="1.0">⏱ 1 मिनट/Q (Timed)</button>
+            <button type="button" class="btn-seg-option" data-val="0">♾ अभ्यास (Untimed)</button>
+          </div>
+        </div>
+
+        <!-- Setting 3: Negative Marking (Segmented Pills) -->
+        <div class="config-group">
+          <span class="config-group-title">नेगेटिव मार्किंग (Negative Marking)</span>
+          <div class="segmented-pill-row" id="segNegativeMarking">
+            <button type="button" class="btn-seg-option active" data-val="0.25">-0.25 (1/4)</button>
+            <button type="button" class="btn-seg-option" data-val="0.33">-0.33 (1/3)</button>
+            <button type="button" class="btn-seg-option" data-val="0">0 (शून्य)</button>
+          </div>
+        </div>
+
+        <!-- Setting 4: Modern iOS-Style Shuffle Switch -->
+        <div class="toggle-switch-card">
+          <div class="toggle-switch-info">
+            <span class="toggle-switch-title">🔀 रैंडम प्रश्न (Shuffle)</span>
+            <span class="toggle-switch-desc">प्रश्नों व विकल्पों का क्रम सफल्ड रहेगा</span>
+          </div>
+          <label class="custom-switch-label">
+            <input type="checkbox" id="cfgShuffle" class="custom-switch-input" checked>
+            <span class="custom-switch-slider"></span>
+          </label>
+        </div>
+
+        <!-- Big Launch CTA with Dynamic Label -->
+        <button type="button" class="btn-start-test-cta" id="startQuizBtn" disabled>
+          <span id="startQuizBtnText">⚠️ अध्याय चुनें (कम से कम 1)</span>
+        </button>
+      </aside>
+    </main>
+  </section>
+
+  <!-- ====================================================================
+       SCREEN 2: QUIZ ENGINE (STRICTLY 100vh NO-SCROLL EXAM CONSOLE)
+       ==================================================================== -->
+  <section id="view-quiz-engine" class="view-screen">
+    <!-- Row 1: Fixed Exam Header -->
+    <header class="exam-navbar">
+      <div class="exam-nav-left">
+        <div class="exam-nav-logo">🇮🇳</div>
+        <div class="exam-nav-title-group">
+          <h2>भारतीय राजव्यवस्था PYQ इंजन</h2>
+          <p id="examSubTitle">अध्याय टेस्ट • सभी प्रश्न सफल्ड</p>
+        </div>
+      </div>
+
+      <div class="exam-timer-capsule" id="examTimerBox" title="शेष समय">
+        <span>⏳</span>
+        <span id="examTimerDisplay">00:00:00</span>
+      </div>
+
+      <div class="exam-nav-right">
+        <button type="button" class="btn-nav-tool" id="examThemeToggleBtn" title="थीम बदलें (Dark/Light)">🌓</button>
+        <button type="button" class="btn-nav-tool" id="btnFullscreenToggle" title="पूर्ण स्क्रीन (Fullscreen)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        </button>
+        <button type="button" class="btn-exam-submit-primary" id="btnSubmitTest">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>परीक्षा समाप्त करें</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Row 2: Exam Split Workspace (Question Viewport + NTA Palette) -->
+    <main class="exam-workspace-split">
+      <!-- Left Question Console -->
+      <section class="question-viewport-pane" aria-label="Question Console">
+        <!-- Question Meta Strip -->
+        <div class="q-meta-header-strip">
+          <div class="q-meta-tags-row">
+            <span class="tag-qnum" id="qCurrentNumberPill">प्रश्न 1 / 50</span>
+            <div class="score-dual-pill" id="qMarksPill" title="अंकन योजना (Marks Scheme)">
+              <span class="score-pos">+1.00</span>
+              <span class="score-sep">|</span>
+              <span class="score-neg">-0.25</span>
+            </div>
+          </div>
+
+          <div class="q-meta-tools-row">
+            <button type="button" class="btn-palette-drawer-toggle" id="btnToggleMobilePalette" title="प्रश्न पैलेट देखें">
+              <span>▦ पैलेट</span>
+            </button>
+            <button type="button" class="btn-flag-bookmark" id="btnFlagQuestion" title="वर्तमान प्रश्न को समीक्षा हेतु चिह्नित करें (M)">
+              <span class="flag-icon">⚑</span>
+              <span id="flagBtnText">समीक्षा हेतु चिह्नित</span>
+              <kbd class="dock-kbd-hint">M</kbd>
+            </button>
+          </div>
+        </div>
+
+        <!-- Question Reading Scroll Box (ONLY this container scrolls) -->
+        <div class="q-reading-scroll-box" id="questionScrollBox">
+          <div class="q-inner-constraint">
+            <div class="q-statement-text" id="questionBodyMount">
+              <!-- Dynamically populated formatted question -->
+            </div>
+
+            <!-- Options Stack Container -->
+            <div class="options-stack-container" id="optionsContainerMount">
+              <!-- Dynamically populated options A, B, C, D -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Question Action Dock (Strictly inside Question Console, aligned with options) -->
+        <footer class="exam-dock-bottom">
+          <div class="exam-dock-inner">
+            <!-- Left: Backward & Reset Actions -->
+            <div class="dock-left-group">
+              <button type="button" class="btn-exam-dock btn-dock-prev" id="btnPrevQuestion" title="पिछला प्रश्न (Left Arrow / ←)">
+                <svg class="dock-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                <span>पिछला</span>
+                <kbd class="dock-kbd-hint">←</kbd>
+              </button>
+              <button type="button" class="btn-exam-dock btn-dock-clear clear-response" id="btnClearResponse" title="वर्तमान विकल्प हटाएं (C)">
+                <svg class="dock-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                <span>साफ़ करें</span>
+                <kbd class="dock-kbd-hint">C</kbd>
+              </button>
+            </div>
+
+            <!-- Center: Auto-Advance Speed Toggle (Zero Mouse Movement) -->
+            <div class="dock-center-group">
+              <label class="auto-advance-toggle-wrap" title="विकल्प चुनते ही स्वतः अगला प्रश्न लोड करें">
+                <input type="checkbox" id="chkAutoAdvance" class="auto-advance-chk">
+                <span class="auto-advance-label">⚡ ऑटो-नेक्स्ट</span>
+              </label>
+            </div>
+
+            <!-- Right: Forward Progression Actions -->
+            <div class="dock-right-group">
+              <button type="button" class="btn-exam-dock btn-dock-review mark-review" id="btnReviewAndNext" title="समीक्षा के लिए चिह्नित करें और आगे बढ़ें (M)">
+                <svg class="dock-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                <span>समीक्षा व अगला</span>
+                <kbd class="dock-kbd-hint">M</kbd>
+              </button>
+              <button type="button" class="btn-exam-dock btn-dock-save save-next-primary" id="btnSaveAndNext" title="उत्तर सहेजें और अगला प्रश्न देखें (Enter / ↵)">
+                <span>सहेजें और अगला</span>
+                <kbd class="dock-kbd-hint primary">↵</kbd>
+                <svg class="dock-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </footer>
+      </section>
+
+      <!-- Right NTA Question Palette Aside -->
+      <aside class="nta-palette-aside" id="ntaPaletteAside" aria-label="NTA Question Palette">
+        <div class="palette-aside-head">
+          <span>▦ प्रश्न नेविगेशन पैलेट</span>
+          <button type="button" class="btn-close-palette-drawer" id="btnClosePaletteDrawer" title="पैलेट बंद करें">✕</button>
+        </div>
+
+        <!-- Official Status Legend Matrix -->
+        <div class="nta-legend-matrix-box">
+          <div class="matrix-legend-row" title="उत्तर दिया गया">
+            <span class="matrix-legend-pill ans" id="cntAnswered">0</span>
+            <span>उत्तर दिया</span>
+          </div>
+          <div class="matrix-legend-row" title="उत्तर नहीं दिया">
+            <span class="matrix-legend-pill not-ans" id="cntNotAnswered">0</span>
+            <span>उत्तर नहीं दिया</span>
+          </div>
+          <div class="matrix-legend-row" title="अभी तक देखा नहीं">
+            <span class="matrix-legend-pill not-vis" id="cntNotVisited">0</span>
+            <span>देखा नहीं</span>
+          </div>
+          <div class="matrix-legend-row" title="समीक्षा हेतु चिह्नित">
+            <span class="matrix-legend-pill rev" id="cntReview">0</span>
+            <span>समीक्षा हेतु</span>
+          </div>
+          <div class="matrix-legend-row" style="grid-column: span 2;" title="उत्तर दिया और समीक्षा हेतु चिह्नित">
+            <span class="matrix-legend-pill ans-rev" id="cntAnsReview">0</span>
+            <span>उत्तर दिया & समीक्षा हेतु चिह्नित</span>
+          </div>
+        </div>
+
+        <!-- Palette Filter Tabs -->
+        <div class="palette-filter-strip">
+          <button type="button" class="btn-palette-tab active" data-filter="all">सभी</button>
+          <button type="button" class="btn-palette-tab" data-filter="answered">उत्तर दिए</button>
+          <button type="button" class="btn-palette-tab" data-filter="unanswered">अनुत्तरित</button>
+          <button type="button" class="btn-palette-tab" data-filter="marked">चिह्नित</button>
+        </div>
+
+        <!-- 5-Column Question Grid -->
+        <div class="palette-grid-scroll-box">
+          <div class="nta-numbers-5col-grid" id="paletteGridMount">
+            <!-- Dynamically populated buttons 1..N -->
+          </div>
+        </div>
+
+        <!-- Palette Footer -->
+        <div class="palette-aside-footer">
+          <span>कुल प्रश्न: <strong id="paletteTotalQuestions">0</strong></span>
+          <button type="button" id="btnHelpShortcuts" style="background:none; border:none; cursor:pointer; font-weight:700; color:var(--primary);">⌨️ शॉर्टकट</button>
+        </div>
+      </aside>
+      <div class="palette-drawer-backdrop" id="paletteDrawerBackdrop"></div>
+    </main>
+  </section>
+
+  <!-- ====================================================================
+       SCREEN 3: RESULT & EVALUATION DASHBOARD
+       ==================================================================== -->
+  <section id="view-result-evaluation" class="view-screen">
+    <!-- Top Hero Banner -->
+    <header class="result-hero-banner">
+      <div class="result-hero-inner">
+        <div class="result-top-headline">
+          <div>
+            <h1>📊 परीक्षा परिणाम एवं विस्तृत समीक्षा</h1>
+            <p id="resultSubtitle">भारतीय राजव्यवस्था — आपने टेस्ट सफलतापूर्वक समाप्त किया</p>
+          </div>
+
+          <div class="result-top-button-group">
+            <button type="button" class="btn-result-action-pill primary" id="btnRetakeAll">
+              <span>↻ पूरा टेस्ट दोबारा दें</span>
+            </button>
+            <button type="button" class="btn-result-action-pill" id="btnRetakeWrongOnly" style="background:#dc2626; border-color:#dc2626;">
+              <span id="btnRetakeWrongText">🔥 केवल गलत प्रश्न दोहराएँ</span>
+            </button>
+            <button type="button" class="btn-result-action-pill" id="btnNewTestChapters">
+              <span>📚 नया टेस्ट बनाएं</span>
+            </button>
+            <button type="button" class="btn-result-action-pill" id="btnPrintResult">
+              <span>🖨️ प्रिंट / PDF</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Metrics KPI Cards -->
+        <div class="result-kpi-metrics-grid">
+          <div class="kpi-stat-card">
+            <div class="kpi-stat-icon-wrap score">🎯</div>
+            <div class="kpi-stat-column">
+              <span class="lbl">प्राप्तांक (Score)</span>
+              <span class="val" id="kpiScore">0.00</span>
+            </div>
+          </div>
+
+          <div class="kpi-stat-card">
+            <div class="kpi-stat-icon-wrap accuracy">⚡</div>
+            <div class="kpi-stat-column">
+              <span class="lbl">सटीकता (Accuracy)</span>
+              <span class="val" id="kpiAccuracy">0%</span>
+            </div>
+          </div>
+
+          <div class="kpi-stat-card">
+            <div class="kpi-stat-icon-wrap correct">✓</div>
+            <div class="kpi-stat-column">
+              <span class="lbl">सही उत्तर</span>
+              <span class="val" id="kpiCorrect" style="color:#34d399;">0</span>
+            </div>
+          </div>
+
+          <div class="kpi-stat-card">
+            <div class="kpi-stat-icon-wrap wrong">✗</div>
+            <div class="kpi-stat-column">
+              <span class="lbl">गलत उत्तर</span>
+              <span class="val" id="kpiWrong" style="color:#f87171;">0</span>
+            </div>
+          </div>
+
+          <div class="kpi-stat-card">
+            <div class="kpi-stat-icon-wrap skipped">⚪</div>
+            <div class="kpi-stat-column">
+              <span class="lbl">छोड़े गए</span>
+              <span class="val" id="kpiSkipped" style="color:#fbbf24;">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Review Content Layout -->
+    <main class="result-content-layout">
+      <!-- Left Review Console -->
+      <section class="result-review-column">
+        <!-- Filter Tabs -->
+        <div class="result-filter-pills-row">
+          <button type="button" class="btn-filter-review-pill active" data-resfilter="all">
+            <span>सभी प्रश्न</span>
+            <span id="badgeFilterAll">(0)</span>
+          </button>
+          <button type="button" class="btn-filter-review-pill wrong" data-resfilter="wrong">
+            <span>✗ केवल गलत</span>
+            <span id="badgeFilterWrong">(0)</span>
+          </button>
+          <button type="button" class="btn-filter-review-pill correct" data-resfilter="correct">
+            <span>✓ केवल सही</span>
+            <span id="badgeFilterCorrect">(0)</span>
+          </button>
+          <button type="button" class="btn-filter-review-pill" data-resfilter="skipped">
+            <span>⚪ छोड़े गए</span>
+            <span id="badgeFilterSkipped">(0)</span>
+          </button>
+        </div>
+
+        <!-- Review Question Card -->
+        <div class="review-question-display-card" id="reviewCardMount">
+          <div class="review-outcome-status-banner correct" id="revOutcomeBanner">
+            <span id="revOutcomeText">✓ आपका उत्तर सही है! (+1.00 अंक)</span>
+            <span id="revTimeSpent" style="font-weight:600;">प्रश्न #1</span>
+          </div>
+
+          <div class="flex items-center justify-between" style="font-size:0.85rem; color:var(--text-muted);">
+            <div>
+              <strong id="revQIndex">प्रश्न 1</strong> • <span id="revChapterName">अध्याय 1</span>
+            </div>
+            <span class="tag-type-badge statement" id="revTypeBadge">कथन आधारित</span>
+          </div>
+
+          <div class="q-statement-text" id="revQuestionBody">
+            <!-- Formatted question statement -->
+          </div>
+
+          <div class="eval-options-comparison-list" id="revOptionsList">
+            <!-- Dynamically populated options with correct & wrong indicators -->
+          </div>
+
+          <div class="review-explanation-callout">
+            <h4>📖 विस्तृत आधिकारिक परीक्षा व्याख्या:</h4>
+            <p id="revExplanationText"></p>
+          </div>
+
+          <div class="review-nav-bottom-bar">
+            <button type="button" class="btn-exam-dock" id="btnRevPrev">❮ पिछला प्रश्न</button>
+            <span id="revPositionIndicator" style="font-weight:700; color:var(--text-muted);">1 / 50</span>
+            <button type="button" class="btn-exam-dock" id="btnRevNext">अगला प्रश्न ❯</button>
+          </div>
+        </div>
+
+        <!-- Chapter Breakdown Table -->
+        <div class="chapter-analytics-card">
+          <h3>📑 अध्यायवार प्रदर्शन विश्लेषण (Chapter-wise Performance)</h3>
+          <table class="chapter-stat-table-data">
+            <thead>
+              <tr>
+                <th>अध्याय</th>
+                <th>कुल प्रश्न</th>
+                <th>सही</th>
+                <th>गलत</th>
+                <th>छोड़े</th>
+                <th>सटीकता</th>
+              </tr>
+            </thead>
+            <tbody id="chapterStatTableBody">
+              <!-- Dynamically populated rows -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Right Result Palette Aside -->
+      <aside class="result-sidebar-column">
+        <div class="result-palette-card-widget">
+          <h3>
+            <span>▦ प्रश्न समीक्षा पैलेट</span>
+            <span id="revPaletteCount" style="font-size:0.8rem; color:var(--text-muted);">50 प्रश्न</span>
+          </h3>
+
+          <div class="result-legend-dots-row">
+            <div class="flex items-center gap-2">
+              <span class="res-dot-indicator correct"></span>
+              <span>सही</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="res-dot-indicator wrong"></span>
+              <span>गलत</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="res-dot-indicator skipped"></span>
+              <span>छोड़ा</span>
+            </div>
+          </div>
+
+          <div class="result-palette-matrix-grid" id="revPaletteGrid">
+            <!-- Dynamically populated result buttons -->
+          </div>
+        </div>
+      </aside>
+    </main>
+  </section>
+
+  <!-- Submit Confirmation Modal -->
+  <div id="submitConfirmModal" class="modal-layer-backdrop hidden" role="dialog" aria-modal="true">
+    <div class="modal-dialog-box">
+      <div class="modal-dialog-header">
+        <h3>📝 परीक्षा समाप्ति पुष्टि</h3>
+        <button type="button" class="btn-nav-tool" id="btnCloseSubmitModal">✕</button>
+      </div>
+      <div class="modal-dialog-body">
+        <p>क्या आप वास्तव में यह परीक्षा समाप्त करना चाहते हैं? सबमिट करने के बाद आप तुरंत अपनी विस्तृत परिणाम समीक्षा और व्याख्या देख सकेंगे।</p>
+        <div class="modal-kpi-matrix">
+          <div class="modal-kpi-cell">
+            <span style="font-size:0.75rem; color:var(--text-muted); display:block;">कुल प्रश्न:</span>
+            <strong style="font-size:1.3rem;" id="modalTotalQ">0</strong>
+          </div>
+          <div class="modal-kpi-cell">
+            <span style="font-size:0.75rem; color:#059669; display:block;">उत्तर दिए गए:</span>
+            <strong style="font-size:1.3rem; color:#059669;" id="modalAnsQ">0</strong>
+          </div>
+          <div class="modal-kpi-cell">
+            <span style="font-size:0.75rem; color:#dc2626; display:block;">अनुत्तरित प्रश्न:</span>
+            <strong style="font-size:1.3rem; color:#dc2626;" id="modalNotAnsQ">0</strong>
+          </div>
+          <div class="modal-kpi-cell">
+            <span style="font-size:0.75rem; color:#7c3aed; display:block;">समीक्षा हेतु चिह्नित:</span>
+            <strong style="font-size:1.3rem; color:#7c3aed;" id="modalRevQ">0</strong>
+          </div>
+        </div>
+        <p style="font-size:0.85rem; color:var(--text-muted);">
+          ⏳ शेष समय: <strong id="modalRemainingTime">00:00</strong>
+        </p>
+      </div>
+      <div class="modal-dialog-footer">
+        <button type="button" class="btn-exam-dock" id="btnResumeTest">परीक्षा जारी रखें</button>
+        <button type="button" class="btn-exam-submit-primary" id="btnFinalSubmitConfirm">हाँ, अंतिम सबमिट करें</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Keyboard Shortcuts Modal -->
+  <div id="shortcutsModal" class="modal-layer-backdrop hidden" role="dialog" aria-modal="true">
+    <div class="modal-dialog-box">
+      <div class="modal-dialog-header">
+        <h3>⌨️ कीबोर्ड शॉर्टकट्स गाइड</h3>
+        <button type="button" class="btn-nav-tool" id="btnCloseShortcutsModal">✕</button>
+      </div>
+      <div class="modal-dialog-body" style="display:flex; flex-direction:column; gap:10px;">
+        <div class="flex items-center justify-between">
+          <span>विकल्प चुनना:</span>
+          <code>की 1, 2, 3, 4 या A, B, C, D</code>
+        </div>
+        <div class="flex items-center justify-between">
+          <span>सहेजें और अगला (Save & Next):</span>
+          <code>Enter या Right Arrow (→)</code>
+        </div>
+        <div class="flex items-center justify-between">
+          <span>पिछला प्रश्न (Previous):</span>
+          <code>Left Arrow (←)</code>
+        </div>
+        <div class="flex items-center justify-between">
+          <span>समीक्षा हेतु चिह्नित (Mark):</span>
+          <code>की M</code>
+        </div>
+        <div class="flex items-center justify-between">
+          <span>प्रतिक्रिया साफ़ करें (Clear):</span>
+          <code>की C</code>
+        </div>
+      </div>
+      <div class="modal-dialog-footer">
+        <button type="button" class="btn-exam-dock" id="btnDismissShortcuts">समझ गया</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Shelf -->
+  <div class="toast-shelf" id="toastContainer"></div>
+
+  <!-- Load Data Bundle -->
+  <script src="data.js"></script>
+  <!-- Main Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
